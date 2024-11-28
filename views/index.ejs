@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title> Aplicacion CRUD</title>
+    <link rel="stylesheet" href="/style/estilo.css">
+</head> 
+<body>
+    <h1>Lista de libros</h1>
+    <table>
+        <tr>
+            <th>ID</th>
+            <th>Fecha de adquisición</th>
+            <th>Fecha de devolución</th>
+            <th>Título</th>
+            <th>Autor</th>
+            <th>Editorial</th>
+            <th>Género</th>
+            <th>Stock</th>
+            <th>edicion</th>
+        </tr>
+        <% libros.forEach(libros => { %>
+        <tr>
+            <td><%= libros.id %></td>
+            <td><%= new Date(libros.fecha_adquisicion).toLocaleDateString('en-US', { year: 'numeric', month: 'short', day: 'numeric' }) %></td>
+            <td><%= libros.fecha_regreso %></td>
+            <td><%= libros.titulo %></td>
+            <td><%= libros.autor %></td>
+            <td><%= libros.editorial %></td>
+            <td><%= libros.genero %></td>
+            <td><%= libros.stock %></td>
+            <td><%= libros.edicion %></td>
+        
+            <td>
+                <a href="/edit/<%= libros.id %>">Editar</a> |
+                <a href="/delete/<%= libros.id %>">Eliminar</a>
+            </td>
+            
+        </tr>
+        <% }); %>
+    </table>
+    <div style="text-align: center; margin-top: 20px;">
+        <a href="/add" class="btn-agregar">Agregar Libro</a>
+    </div>
+    
+</body>
+</html>

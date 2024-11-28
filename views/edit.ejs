@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Editar Usuario</title>
+    <link rel="stylesheet" href="/style/estilo.css">
+</head>
+<body>
+    <h1>Editar Producto</h1>
+    <form action="/update/<%= libros.id %>" method="POST">
+        <label for="fecha_regreso">fecha_regreso:</label>
+        <input type="datetime-local" id="fecha_regreso" name="fecha_regreso" value="<%= libros.fecha_regreso %>" required>
+
+        <label for="titulo">titulo:</label>
+        <input type="text" id="titulo" name="titulo" value="<%= libros.titulo %>" required>
+
+        <label for="autor">autor:</label>
+        <input type="text" id="autor" name="autor" value="<%= libros.autor %>" required>
+
+        <label for="editorial">editorial:</label>
+        <input type="text" id="editorial" name="editorial" value="<%= libros.editorial %>" required>
+
+        <label for="genero">genero:</label>
+        <input type="text" id="genero" name="genero" value="<%= libros.genero %>" required>
+
+        <label for="stock">stock:</label>
+        <input type="int" id="stock" name="stock" value="<%= libros.stock %>" required>
+
+        <label for="edicion">edicion:</label>
+        <input type="text" id="edicion" name="edicion" value="<%= libros.edicion %>">
+
+        <button type="submit">Actualizar datos</button>
+    </form>
+</body>
+</html>
