@@ -22,18 +22,6 @@ CREATE TABLE `libros` (
 -- Inserción de registros de ejemplo
 INSERT INTO `libros` (`fecha_regreso`, `titulo`, `autor`, `editorial`, `genero`, `stock`, `edicion`)
 VALUES
-('2024-12-15 10:00:00', 'El Principito', 'Antoine de Saint-Exupéry', 'Reynal & Hitchcock', 'Literatura Infantil', 15, '5ª Edición'),
+('2024-12-15 10:00:00', 'El Principito', 'Antoine de Saint-Exupéry', 'Reynal & Hitchcock', 'Literatura Infantil', 15, '5ª Edición');
 
--- Consulta para formatear las fechas y mostrar los datos
-SELECT 
-    id,
-    titulo,
-    autor,
-    editorial,
-    genero,
-    stock,
-    DATE_FORMAT(fecha_adquisicion, '%d-%b-%Y %H:%i:%s') AS fecha_adquisicion_formateada,
-    DATE_FORMAT(fecha_regreso, '%d-%b-%Y %H:%i:%s') AS fecha_regreso_formateada,
-    edicion
-FROM libros;
 
